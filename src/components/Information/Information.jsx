@@ -1,7 +1,9 @@
+import { useStoreState } from '../../hooks/useStoreState'
 import { InformationLayout } from './InformationLayout'
-import PropTypes from 'prop-types'
 
-export const Information = ({ isDraw, isGameEnded, currentPlayer }) => {
+export const Information = () => {
+	const { isDraw, isGameEnded, currentPlayer } = useStoreState()
+
 	let text = `Ходит: ${currentPlayer}`
 
 	if (isDraw) {
@@ -11,10 +13,4 @@ export const Information = ({ isDraw, isGameEnded, currentPlayer }) => {
 	}
 
 	return <InformationLayout {...{ text }} />
-}
-
-Information.propTypes = {
-	isDraw: PropTypes.bool,
-	isGameEnded: PropTypes.bool,
-	currentPlayer: PropTypes.string,
 }
