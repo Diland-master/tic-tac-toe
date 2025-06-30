@@ -1,9 +1,11 @@
-import { store } from '../../store'
+import { useDispatch } from 'react-redux'
 import styles from './ButtonReset.module.css'
 
 export const ButtonReset = () => {
+	const dispatch = useDispatch()
+
 	const handleReset = () => {
-		store.dispatch({ type: 'RESET' })
+		dispatch({ type: 'RESET' })
 	}
 
 	return (

@@ -1,8 +1,11 @@
-import { useStoreState } from '../../hooks/useStoreState'
+import { useSelector } from 'react-redux'
 import { InformationLayout } from './InformationLayout'
+import { selectCurrentPlayer, selectIsDraw, selectIsGameEnded } from '../../selectors'
 
 export const Information = () => {
-	const { isDraw, isGameEnded, currentPlayer } = useStoreState()
+	const isDraw = useSelector(selectIsDraw)
+	const isGameEnded = useSelector(selectIsGameEnded)
+	const currentPlayer = useSelector(selectCurrentPlayer)
 
 	let text = `Ходит: ${currentPlayer}`
 
