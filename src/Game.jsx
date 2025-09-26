@@ -1,13 +1,15 @@
+import { Component } from 'react'
 import { Field, Information } from './components'
 import { ButtonReset } from './components/ButtonReset/ButtonReset'
-import styles from './Game.module.css'
 
-export const Game = () => {
-	return (
-		<div className={styles.gameWrapper}>
-			<Information />
-			<Field />
-			<ButtonReset />
-		</div>
-	)
+export class Game extends Component {
+	render() {
+		return (
+			<div className="max-w-80 my-12 mx-auto">
+				<Information />
+				<Field />
+				<ButtonReset />
+			</div>
+		)
+	}
 }
